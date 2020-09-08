@@ -11,10 +11,12 @@ secondBtn.addEventListener('click', clickHandler);
 newBtn.removeEventListener('click', clickHandler);
 
 const buyBtn = document.querySelectorAll('.buy');
-console.log(buyBtn);
 
 buyBtn.forEach(item =>
   item.addEventListener('click', () => {
-    console.log('this works');
+    console.log(event.target.dataset.price);
+    if (event.target.dataset.price <= 300) {
+      alert('You need to spend more for free shipping.');
+    }
   })
 );
