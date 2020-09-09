@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title></title>
+        <link rel="stylesheet" href="../../base.css" />
+    </head>
+
+    <body>
+        <div class="cards">
+            <div class="card" data-description="Wes is cool">
+                <img src="https://picsum.photos/200" alt="Wes Bos" />
+                <h2>Wes Bos</h2>
+                <button>Learn more →</button>
+            </div>
+            <div class="card" data-description="Scott is neat!">
+                <img src="https://picsum.photos/200" alt="Wes Bos" />
+                <h2>Scott Tolinski</h2>
+                <button>Learn more →</button>
+            </div>
+            <div class="card" data-description="Kait is beautiful!">
+                <img src="https://picsum.photos/200" alt="Wes Bos" />
+                <h2>Kait Bos</h2>
+                <button>Learn more →</button>
+            </div>
+            <div class="card" data-description="Snickers is a dog!">
+                <img src="https://picsum.photos/200" alt="Wes Bos" />
+                <h2>Snickers the dog</h2>
+                <button>Learn more →</button>
+            </div>
+        </div>
+
+        <div class="modal-outer">
+            <div class="modal-inner">
+                <p>
+                    You are not logged in. Please login now or you cannot
+                    continue your purchase.
+                </p>
+            </div>
+        </div>
+        <style>
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 20px;
+                padding: 2rem;
+            }
+
+            .card {
+                background: white;
+                padding: 10px;
+            }
+
+            .card h2 {
+                color: black;
+            }
+
+            .card img {
+                width: 100%;
+            }
+
+            .card button {
+                cursor: pointer;
+            }
+
+            .modal-outer {
+                background: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                height: 100vh;
+                width: 100vw;
+                top: 0;
+                left: 0;
+                justify-content: center;
+                align-items: center;
+                display: none;
+                pointer-events: 0;
+                transition: opacity 0.2s;
+            }
+
+            .modal-outer.open {
+                display: grid;
+                opacity: 1;
+                pointer-events: all;
+                transition: ease-in 0.2s;
+            }
+
+            .modal-inner {
+                max-width: 600px;
+                min-width: 400px;
+                min-height: 200px;
+                background: white;
+                padding: 2rem;
+            }
+        </style>
+        <script src="JS Files/click-outside.js"></script>
+    </body>
+</html>
