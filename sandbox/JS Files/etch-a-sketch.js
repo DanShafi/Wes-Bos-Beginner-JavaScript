@@ -51,6 +51,7 @@ function handleKey(e) {
     e.preventDefault();
     draw({ key: e.key });
   }
+  console.log(e);
 }
 
 // Clear/Shake function
