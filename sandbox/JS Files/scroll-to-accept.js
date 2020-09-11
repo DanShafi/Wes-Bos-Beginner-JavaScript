@@ -4,7 +4,7 @@ const button = document.querySelector('.accept');
 function obCallBack(payload) {
   if (payload[0].intersectionRatio === 1) {
     button.disabled = false;
-    console.log('REMOVING DISABLED');
+    ob.unobserve(terms.lastElementChild);
   }
 }
 
