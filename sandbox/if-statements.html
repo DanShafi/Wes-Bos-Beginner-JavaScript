@@ -70,9 +70,25 @@
             // 2. What to do if true
             // 3. What to do if false
 
+            const count = 5;
             const word = count === 1 ? "item" : "items";
-            const sentence = `You have ${count} ${word} in your cart.`;
+            const sentence = `You have ${count} item${
+                count === 1 ? "" : "s"
+            } in your cart.`;
             console.log(sentence);
+
+            function isTrue() {
+                console.log("It is true");
+            }
+
+            function notTrue() {
+                console.log("It is not true");
+            }
+
+            function showTruth() {
+                const factCheck = true;
+                return factCheck ? isTrue() : notTrue();
+            }
         </script>
     </body>
 </html>
