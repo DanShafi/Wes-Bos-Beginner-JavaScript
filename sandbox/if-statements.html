@@ -8,56 +8,71 @@
     <body>
         <script>
             /* eslint-disable */
-            const age = 50;
-            if (age > 70) {
-                console.log("In your seventies");
-            } else if (age > 60) {
-                console.log("In your sixties");
-            } else if (age > 50) {
-                console.log("In your fifties");
-            } else {
-                console.log("You must be 50");
+            // const age = 50;
+            // if (age > 70) {
+            //     console.log("In your seventies");
+            // } else if (age > 60) {
+            //     console.log("In your sixties");
+            // } else if (age > 50) {
+            //     console.log("In your fifties");
+            // } else {
+            //     console.log("You must be 50");
+            // }
+
+            // function slugify(sentence, lowercase) {
+            //     if (lowercase) {
+            //         return sentence.replace(/\s/g, "-").toLowerCase();
+            //     }
+            //     return sentence.replace(/\s/g, "-");
+            // }
+
+            // function userValidation() {
+            //     const first = "Dan";
+            //     const last = "Shafi";
+            //     if (first === "John" || (first === "Dan" && last === "Shafi")) {
+            //         console.log("User validated.");
+            //     } else {
+            //         return "User validation error";
+            //     }
+            // }
+
+            // const values = [
+            //     [],
+            //     {},
+            //     -10,
+            //     1,
+            //     0,
+            //     "",
+            //     "full string",
+            //     "",
+            //     undefined,
+            //     NaN,
+            //     null,
+            // ];
+
+            // console.group("True or false values");
+            // values.forEach((value) => {
+            //     if (value) {
+            //         console.log(value, "is truthy");
+            //     } else {
+            //         console.log(value, "is falsy");
+            //     }
+            // });
+
+            const isCool = true;
+
+            if (!isCool) {
+                console.log("You are not cool");
             }
 
-            function slugify(sentence, lowercase) {
-                if (lowercase) {
-                    return sentence.replace(/\s/g, "-").toLowerCase();
-                }
-                return sentence.replace(/\s/g, "-");
-            }
+            // Ternary
+            // 1. Condition
+            // 2. What to do if true
+            // 3. What to do if false
 
-            function userValidation() {
-                const first = "Dan";
-                const last = "Shafi";
-                if (first === "John" || (first === "Dan" && last === "Shafi")) {
-                    console.log("User validated.");
-                } else {
-                    return "User validation error";
-                }
-            }
-
-            const values = [
-                [],
-                {},
-                -10,
-                1,
-                0,
-                "",
-                "full string",
-                "",
-                undefined,
-                NaN,
-                null,
-            ];
-
-            console.group("True or false values");
-            values.forEach((value) => {
-                if (value) {
-                    console.log(value, "is truthy");
-                } else {
-                    console.log(value, "is falsy");
-                }
-            });
+            const word = count === 1 ? "item" : "items";
+            const sentence = `You have ${count} ${word} in your cart.`;
+            console.log(sentence);
         </script>
     </body>
 </html>
