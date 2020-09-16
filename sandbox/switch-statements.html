@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../base.css" />
+    </head>
+    <body>
+        <style>
+            .turtle {
+                position: relative;
+                --x: 0;
+                --y: 0;
+                --rotate: 0;
+                transform: translateX(var(--x)) translateY(var(--y))
+                    rotateY(var(--rotate));
+                transition: transform 0.2s;
+            }
+        </style>
+        <img class="turtle" src="../playground/turtle.png" alt="Turtle" />
+        <script src="JS Files/switch-statements.js"></script>
+    </body>
+</html>
