@@ -86,8 +86,26 @@
             }
 
             function showTruth() {
-                const factCheck = true;
+                const factCheck = false;
                 return factCheck ? isTrue() : notTrue();
+            }
+
+            // && in functions
+
+            function check1() {
+                return true;
+            }
+
+            function check2() {
+                return true;
+            }
+
+            function check3() {
+                return true;
+            }
+
+            if (check1() && check2() && check3()) {
+                console.log("All tests have passed.");
             }
         </script>
     </body>
