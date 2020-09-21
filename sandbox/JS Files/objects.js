@@ -43,3 +43,22 @@ const person2 = {
 const person3 = _.cloneDeep(person1);
 person3.name = 'Bob';
 person3.clothing = 100;
+
+// Using Spread in multiple objects
+
+const storeInventory = {
+  shirts: 100,
+  jeans: 50,
+  coats: 10,
+};
+
+const onlineInventory = {
+  shoes: 25,
+  accessories: 10,
+  bags: 100,
+};
+
+const allInventory = {
+  ...storeInventory,
+  ...onlineInventory,
+};
