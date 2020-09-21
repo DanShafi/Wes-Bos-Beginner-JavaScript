@@ -9,9 +9,12 @@ const aboutMe = {
     reading: 'kindle',
     media: 'netflix',
   },
+  sayHello(greeting = 'Hello') {
+    return `${greeting} ${this.name}`;
+  },
 };
 
 console.log(aboutMe.languages[0]);
 
-const propertyToCheck = prompt('What property do you want to check?');
-console.log(aboutMe[propertyToCheck]);
+// const propertyToCheck = prompt('What property do you want to check?');
+// console.log(aboutMe[propertyToCheck]);
