@@ -136,7 +136,14 @@ toppings.reverse();
 */
 
 // find the first rating that talks about a burger with find()
+
+const findBurger = feedback.find(e => e.comment.includes('burg'));
+
 // find all ratings that are above 2 with filter()
+
+const goodReviews = feedback.filter(rating => rating > 2);
+console.log(goodReviews);
+
 // find all ratings that talk about a burger with filter()
 // Remove the one star rating however you like!
 
