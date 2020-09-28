@@ -77,21 +77,59 @@ Object.entries(meats).forEach(entry => {
 
 // Display all bun types with " or " - use join()
 
+buns.join('-');
+
 // We have a string "hot dogs,hamburgers,sausages,corn" - use split() to turn it into a string
 
+const foodString = 'hot dogs,hamburgers,sausages,corn';
+console.log(foodString.split(','));
+
 // take the last item off toppings with pop()
+
+const lastItem = toppings.pop();
+console.log(lastItem);
+
 // add it back with push()
+toppings.push(lastItem);
+
 // take the first item off toppings with shift()
+
+const firstItem = toppings.shift();
 // add it back in with unshift()
+toppings.unshift(firstItem);
 // Do the last four,but immutable (with spreads and new variables)
 
+let newToppings = toppings.slice(0, toppings.length - 1);
+newToppings = [...newToppings, toppings[toppings.length - 1]];
+
 // Make a copy of the toppings array with slice()
+
+const copyOfToppings = toppings.slice(0);
+toppings[0] = 'Sweetcorn';
+
 // Make a copy of the toppings array with a spread
+
+const toppings2 = [...toppings];
+
 // take out items 3 to 5 of your new toppings array with splice()
+
+toppings2.splice(3, 5);
+
 // find the index of Avocado with indexOf() / lastIndexOf()
+
+const avoIndex = toppings.indexOf('Avocado');
+
 // Check if hot sauce is in the toppings with includes()
+
+const checkHotSauce = toppings.includes('Hot Sauce');
+
 // add it if it's not
+
+toppings.push('Hot Sauce');
+
 // flip those toppings around with reverse()
+
+toppings.reverse();
 
 /*
   Callback Methods
