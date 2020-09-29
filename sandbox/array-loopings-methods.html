@@ -137,8 +137,8 @@
             ];
 
             /*
-      Looping Methods
-    */
+              Looping Methods
+            */
             function logTopping(topping, index, originalArray) {
                 const nextTopping = originalArray[index + 1];
                 const prevTopping = originalArray[index - 1];
@@ -152,6 +152,36 @@
             }
 
             toppings.forEach(logTopping);
+
+            // Mapping
+
+            function addArms(face) {
+                return `👋 ${face} 👋`;
+            }
+
+            const toys = faces.map(addArms);
+
+            const capitalize = (word) => {
+                return `${word[0].toUpperCase()}${word.slice(1)}`;
+            };
+            const firstNames = ["dan", "sheena"].map(capitalize);
+
+            const orderTotalWithVAT = orderTotals.map((total) =>
+                Math.round(total * 1.05)
+            );
+            console.log(orderTotalWithVAT);
+
+            const cleanPeople = people.map(function(person) {
+                const birthday = new Date(person.birtday).getTime();
+                const now = Date.now();
+                const age = Math.floor((now - birthday) / 31536000000);
+                return {
+                    age,
+                    name: `${person.names.first} ${person.names.last}`,
+                };
+            });
+
+            console.table(cleanPeople);
         </script>
     </body>
 </html>
