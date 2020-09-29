@@ -172,7 +172,7 @@
             console.log(orderTotalWithVAT);
 
             const cleanPeople = people.map(function(person) {
-                const birthday = new Date(person.birtday).getTime();
+                const birthday = new Date(person.birthday).getTime();
                 const now = Date.now();
                 const age = Math.floor((now - birthday) / 31536000000);
                 return {
@@ -181,7 +181,37 @@
                 };
             });
 
-            console.table(cleanPeople);
+            const over40Check = cleanPeople.filter((person) => {
+                return person.age > 40;
+            });
+
+            console.table(over40Check);
+
+            const findByID = (id) => {
+                return function isStudent(student) {
+                    return student.id === id;
+                };
+            };
+
+            console.clear();
+
+            const abbrevName = (name) => {
+                const splitArray = name.split(" ");
+                const firstName = splitArray[0];
+                const lastName = splitArray[1];
+                const result = `${firstName[0].toUpperCase()}.${lastName[0].toUpperCase()}`;
+                return result;
+            };
+
+            function findByProp(key, value) {
+                return function isStudent(student) {
+                    return student[key] === value;
+                };
+            }
+
+            const student = students.find(findByProp("first_name", "Flory"));
+            const student2 = students.find(findByProp("id", "54cb"));
+            console.log(student, student2);
         </script>
     </body>
 </html>
