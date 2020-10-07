@@ -212,6 +212,25 @@
             const student = students.find(findByProp("first_name", "Flory"));
             const student2 = students.find(findByProp("id", "54cb"));
             console.log(student, student2);
+
+            // Reduce
+
+            function tallyNumbers(tally, currentTotal) {
+                console.log(`The current tally is ${tally}`);
+                console.log(`The current total is ${currentTotal};`);
+                return tally + currentTotal;
+            }
+
+            const allOrders = orderTotals.reduce(tallyNumbers);
+
+            function inventoryReducer(totals, item) {
+                console.log(`Looping over ${item.type}`);
+                totals[item.type] = totals[item.type] + 1 || 1;
+                return totals;
+            }
+
+            const inventoryCounts = inventory.reduce(inventoryReducer, {});
+            console.log(inventoryCounts);
         </script>
     </body>
 </html>
