@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>For Loops</title>
+    </head>
+
+    <body>
+        <script>
+            const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
+            const newNumbers = numbers.map((x) => x * 2);
+
+            const newObject = {
+                name: "Dan",
+                last: "Shafi",
+                age: 27,
+                tel: 07999999999,
+                occupation: "Developer",
+            };
+
+            const name = "Wes Bos";
+
+            // For
+            for (let i = 0; i <= 10; i++) {}
+            for (let i = 0; i < numbers.length; i++) {}
+            // For of
+            for (const letter of name) {
+                console.log(letter);
+            }
+
+            // For in
+            for (const person in newObject) {
+                console.log(person);
+            }
+
+            const baseHumanStats = {
+                feet: 2,
+                arms: 2,
+                eyes: 2,
+                head: 1,
+            };
+
+            function Human(name) {
+                this.name = name;
+            }
+
+            Human.prototype = baseHumanStats;
+
+            const Dan2 = new Human("Dan");
+
+            const newArray = [1, 2, 3, 4, 5];
+            const spreadArray = [...newArray];
+
+            // While Loop
+
+            let cool = true;
+            let i = 0;
+            while (cool === true) {
+                console.log("You are cool");
+                i++;
+                if (i > 100) {
+                    cool = false;
+                }
+            }
+        </script>
+    </body>
+</html>
