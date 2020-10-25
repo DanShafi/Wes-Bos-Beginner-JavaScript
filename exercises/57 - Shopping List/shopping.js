@@ -20,7 +20,8 @@ function handleSubmit(e) {
   console.log(`There are now ${items.length} items in your state`);
   // Clear the form
   e.currentTarget.item.value = ' ';
-  displayItems();
+  // Fire off a custom event that will tell anyone else that the items have been updated.
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
 }
 
 function displayItems() {
@@ -37,6 +38,25 @@ function displayItems() {
   list.innerHTML = html;
 }
 
+// Saving items to localStorage
+
+function mirrorToLocalStorage() {
+  console.info('Saving items to localStoage');
+  localStorage.setItem('items', JSON.stringify(items));
+}
+
+function restoreFromLocalStorage() {
+  console.info('Restoring from localStorage');
+  const localStorageItems = JSON.parse(localStorage.getItem('items'));
+  if (localStorageItems.length) {
+    items.push(...localStorageItems);
+    list.dispatchEvent(new CustomEvent('itemsUpdated'));
+  }
+}
+
 // Push the items into our state
 
 shoppingForm.addEventListener('submit', handleSubmit);
+list.addEventListener('itemsUpdated', displayItems);
+list.addEventListener('itemsUpdated', mirrorToLocalStorage);
+restoreFromLocalStorage();
